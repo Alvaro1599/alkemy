@@ -1,23 +1,13 @@
-import express, { Application } from "express";
-import { AppConstructorI } from "../interface";
+import { GlobalConfig } from "./../config/index";
+import express, { Application, urlencoded, json } from "express";
+import router from "../routes";
 
-export class App {
-  private express = express;
-  public app: Application;
-  public port: number | string;
-  constructor({ port }: AppConstructorI) {
-    this.app = express();
-    this.port = port;
-    this.config();
-  }
+const App: Application = express();
 
-  config() {
-    this.app.set("PORT", this.port || 3000);
-  }
-  initRouter(){
-    
-  }
-  getInstance() {
-    return this.app;
-  }
-}
+App.use(json());
+App.use(urlencoded({ extended: true }));
+App.set("PORT", GlobalConfig.app.PORT);
+
+App.use("/v1",router)
+
+export default App;
