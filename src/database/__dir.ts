@@ -1,0 +1,1 @@
+export const models_dir=__dirname
