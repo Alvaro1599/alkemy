@@ -54,7 +54,6 @@ const characterController = {
   },
   findCharacterByQuery: async function (req: Request, res: Response) {
     try {
-      console.log("reerer",req.query)
       let character = await CharacterService.findCharacterByQuery(findQueryCharacterMapper(req.query));
       if (!character) return res.status(204).json(character);
       return res.status(201).json(character);
