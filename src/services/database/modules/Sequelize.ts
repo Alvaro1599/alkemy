@@ -6,14 +6,14 @@ import { Gender } from '../../../api/gender/model';
 import { GenderMovie } from '../../../api/shared/genderMovie/model';
 import { Movie } from '../../../api/movies/model';
 import { GlobalConfigI } from './../../../config/interface/index';
-export const SequelizeConnection=({db}:GlobalConfigI):Promise<Sequelize>=>{
+export const SequelizeConnection=async({db}:GlobalConfigI)=>{
     const sequelize = new Sequelize({
         database: db.DATABASE,
         dialect: db.DIALECT,
         username: db.USER,
         password: db.PASSWORD,
         logging: false,
-        models: [Character, CharacterMovie, Gender, GenderMovie, Movie,User],
+        models:[User,CharacterMovie,Gender,GenderMovie,Movie,Character]
       })
-      return sequelize.sync();    
+      return await sequelize.sync({force:false});    
 }

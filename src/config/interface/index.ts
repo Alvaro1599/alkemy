@@ -1,7 +1,6 @@
 import { Dialect } from "sequelize/types"
 
 export interface GlobalConfigI{
-
     app:{
         PORT:number | string
         JWT_SECRET:string
