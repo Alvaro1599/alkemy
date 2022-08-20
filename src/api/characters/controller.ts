@@ -33,7 +33,9 @@ const characterController = {
 
   deleteCharacter: async function (req: Request, res: Response) {
     try {
-      await CharacterService.deleteCharacter(req.body);
+      ;
+      if (!(await CharacterService.deleteCharacter(req.body)))
+      return res.status(404).send("character wasn't found");
       return res.status(200).send("character was deleted");
     } catch (error) {
       console.log(error);

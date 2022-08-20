@@ -6,6 +6,7 @@ import {
   Model,
   PrimaryKey,
   Table,
+  Unique,
 } from "sequelize-typescript";
 import { Character } from "../characters/model";
 import { Gender } from "../gender/model";
@@ -19,10 +20,12 @@ export class Movie extends Model {
   @Column({
     type: DataType.STRING,
     validate: {
+      isUrl: true,
       notEmpty: true,
     },
   })
   image!: string;
+  @Unique
   @Column({
     type: DataType.STRING,
     validate: {
@@ -38,8 +41,10 @@ export class Movie extends Model {
   })
   history!: string;
   @Column({
-    type: DataType.STRING,
+    type: DataType.NUMBER,
     validate: {
+      min: 1,
+      max: 5,
       notEmpty: true,
     },
   })

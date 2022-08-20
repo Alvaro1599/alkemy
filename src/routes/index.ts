@@ -1,13 +1,14 @@
 import express from "express"
-import authController from "../api/Auth/controller"
 import authRouter from "../api/Auth/router"
 import characterRouter from "../api/characters/routes"
-import userRouter from "../api/users/routes"
+import movieRouter from "../api/movies/routes"
 
 const router=express.Router()  
 
 router.use("/auth",authRouter)
-router.use("/character",characterRouter)
+router.use("/characters",characterRouter)
+router.use("/movies",movieRouter)
+
 
 
 export default router
