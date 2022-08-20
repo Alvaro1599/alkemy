@@ -6,7 +6,6 @@ export const development:GlobalConfigI={
         PORT:process.env.PORT_APP as string,
         JWT_SECRET:process.env.JWT_SECRET as string,
         CRYPTO_SECRET:process.env.CRYPTO_SECRET as string
-
     },
     db:{
         PORT:process.env.PORT as string,

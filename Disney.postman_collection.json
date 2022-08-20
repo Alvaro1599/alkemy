@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "d27a0c8a-c10e-4bfc-afbc-16f9da7778d6",
+		"name": "Disney",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15231375"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6Il9XNFBpN0tYUnlHSHV4OTh2eGltMmciLCJleHAiOjE2NTU2NTc4NzAsImlhdCI6MTY1NTA1MzA2NX0.M_n5Jn35UVCSnCOKpqSBTF7bR8Upp6fh1tSZ9BlAm_M",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"alvaro@gmail.com\",\"name\": \"asdasdas\",\"lastName\": \"asdasd\",\"password\": \"123456789\"}"
+				},
+				"url": "http://localhost:8080/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6Il9XNFBpN0tYUnlHSHV4OTh2eGltMmciLCJleHAiOjE2NTU2NTc4NzAsImlhdCI6MTY1NTA1MzA2NX0.M_n5Jn35UVCSnCOKpqSBTF7bR8Upp6fh1tSZ9BlAm_M",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"alvaro@gmail.com\",\"password\": \"123456789\"}"
+				},
+				"url": "http://localhost:8080/v1/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Characters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rh12c2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"image\":\"asdasdasdasdasdasd\",\r\n        \"name\":\"alvaro123\",\r\n        \"age\":2421,\r\n        \"weight\":24.54,\r\n        \"history\":\"Esta es una historia\"\r\n    }"
+				},
+				"url": "http://localhost:8080/v1/characters/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Characters",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\":\"ef45b34e-a675-44e2-bca3-d1c733308a18\",\r\n        \"image\":\"\",\r\n        \"name\":\"\",\r\n        \"age\":0,\r\n        \"weight\":0,\r\n        \"history\":\"\"\r\n    }"
+				},
+				"url": "http://localhost:8080/v1/character/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Character",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"cc776449-e628-492f-b04f-961e3065af60\"}"
+				},
+				"url": "http://localhost:8080/v1/character/"
+			},
+			"response": []
+		},
+		{
+			"name": "Details Character",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"698896e3-cb92-40b0-814d-1303d4c84080\"}"
+				},
+				"url": "http://localhost:8080/v1/characters/detail"
+			},
+			"response": []
+		},
+		{
+			"name": "Query Character",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/character/search?weight=24.54",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"character",
+						"search"
+					],
+					"query": [
+						{
+							"key": "weight",
+							"value": "24.54"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:8080/v1/movies/"
+			},
+			"response": []
+		},
+		{
+			"name": "Query Movie",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/movies/search?history=asdas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"movies",
+						"search"
+					],
+					"query": [
+						{
+							"key": "history",
+							"value": "asdas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Movies",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"pelicula\",\r\n \"image\":\"www.asdasdasd.com\",\r\n \"history\":\"asdasdasdasdadasdas\",\r\n \"review\":5\r\n}"
+				},
+				"url": "http://localhost:8080/v1/movies/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Movies",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\":\"b444b8a1-149d-4fca-a192-e32e4d0d6dbe\",\r\n  \"title\":\"pelic\"\r\n\r\n}"
+				},
+				"url": "http://localhost:8080/v1/movies/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Movie",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJhc2Rhc2RhcyIsImxhc3RuYW1lIjoiYXNkYXNkIiwiZW1haWwiOiJhbHZhcm9AZ21haWwuY29tIn0sImlhdCI6MTY2MTAzNDQzNywiZXhwIjoxNjYxNjM5MjM3fQ.uI79FAnIr70QIU3HsIXIZ_GscUinACqYq-K0sRavUmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"81ba73f3-5a47-486d-b282-22d2784b2be6\"\r\n}"
+				},
+				"url": "http://localhost:8080/v1/movies/"
+			},
+			"response": []
+		}
+	]
+}
